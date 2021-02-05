@@ -23,14 +23,11 @@ jobs:
         pipenv install
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
-    - name: Prepare Selenium
-      # https://github.com/marketplace/actions/setup-chromedriver
-      uses: nanasess/setup-chromedriver@master
-      
-    - name: Install Google Chrome Using Shell Script
+    - name: Set Up Chromedriver    
       run: |
-       chmod +x ./myScripts/InstallChrome.sh
-        ./myScripts/InstallChrome.sh  
+        sudo apt-get update
+        sudo apt-get --only-upgrade install google-chrome-stable
+        sudo apt-get -yqq install chromium-chromedriver
       
 #     - name: Launch browser
 #       run: |

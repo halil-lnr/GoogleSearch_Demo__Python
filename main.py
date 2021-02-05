@@ -7,8 +7,8 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 class OpenGoogle:
-    base_url = "http://alawdokcweb205:8023/"
-#     base_url = "http://www.google.com"
+#     base_url = "http://alawdokcweb205:8023/"
+    base_url = "http://www.google.com"
 
     logger = LogGen.loggen()
 

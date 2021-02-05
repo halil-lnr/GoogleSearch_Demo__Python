@@ -1,0 +1,5 @@
+html-testRunner
+pip
+selenium
+setuptools
+webdriver-manager

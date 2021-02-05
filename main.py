@@ -7,23 +7,18 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 class OpenGoogle:
-    # base_url = "http://alawdokcweb205:8023/"
-    base_url = "http://www.google.com"
-
+    base_url = "http://alawdokcweb205:8023/"
+#     base_url = "http://www.google.com"
 
     logger = LogGen.loggen()
 
-    # options = webdriver.ChromeOptions()
-    # options.add_argument("--headless")
-    # # options.set_headless()
-    # options.add_argument("--no-sandbox")
-    # options.add_argument("--disable-dev-shm-usage")
-    # options.add_argument("--ignore-certificate-errors")
-    selenium_url = "http://localhost:4444/wd/hub"
-    caps = DesiredCapabilities.CHROME
-    driver = webdriver.Remote(command_executor=selenium_url, desired_capabilities=caps)
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--ignore-certificate-errors")
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
-    # driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.implicitly_wait(20)
 
     print("Launching Headless browser.........")

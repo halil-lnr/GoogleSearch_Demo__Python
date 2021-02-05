@@ -46,7 +46,7 @@ class UtilMethods(object):
             self.wait.until(EC.element_to_be_clickable((By.XPATH, locator)))
         except Exception as e:
             print(e)
-        #element is clicked
+        # element is clicked
         self.driver.find_element_by_xpath(locator).click()
 
     def click_execute_script(self, locator):
@@ -57,7 +57,7 @@ class UtilMethods(object):
         except Exception as e:
             print(e)
         sleep(0.5)
-        #click even is executed using script method
+        # click even is executed using script method
         self.driver.execute_script("arguments[0].click();", self.driver.find_element_by_xpath(locator))
 
     def send_keys(self, locator, value):
@@ -89,13 +89,13 @@ class UtilMethods(object):
         except Exception as e:
             print(e)
 
-        #text value is retrived from the element
+        # text value is retrived from the element
         text = self.driver.find_element_by_xpath(locator).text
         return text
 
     def execution_time(self, end_time):
         # Method to find the time taken for an Test case to execute
-        #if end time is converted into minitus from seconds
+        # if end time is converted into minitus from seconds
         if end_time > 60:
             mins = int(end_time / 60)
             secs = end_time % 60

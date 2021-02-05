@@ -43,7 +43,7 @@ jobs:
         
  
     - name: Run Tests
-      run: python -m main.py --junitxml=report.xml
+      run: python -m main.py
 #       run: pipenv run python main.py test functional_tests.tests.test_selenium.test_exams -v 2
 
 

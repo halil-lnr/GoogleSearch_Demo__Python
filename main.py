@@ -35,13 +35,12 @@ class OpenGoogle:
     search_box = driver.find_element_by_name('q')
     search_box.send_keys('Laptop')
     search_box.submit()
-    time.sleep(5) 
-
+    time.sleep(5)
+    
     page_title = driver.title
     print("New page title is : " + page_title)
     logger.info("New page title is : " + page_title)
     time.sleep(3)
-    
     
     userName_xpath = "//input[@formcontrolname='username']"
     passWord_xpath = "//input[@formcontrolname='password']"

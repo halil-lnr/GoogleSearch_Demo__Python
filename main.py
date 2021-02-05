@@ -41,27 +41,27 @@ class OpenGoogle:
     time.sleep(1)
     current_url = driver.current_url
     print(f"Page Opened = {current_url}")
-    driver.find_element_by_xpath(userName_xpath).send_keys("infosys_user")
-
-    time.sleep(1)
-    print("Username Entered")
-    driver.find_element_by_xpath(passWord_xpath).send_keys("Automation03")
-    print("Password Entered")
-    time.sleep(1)
-    driver.find_element_by_xpath(arrowGroupID_xpath).click()
-    time.sleep(1)
-    element = driver.find_element_by_xpath("//*[contains(text(),'External')]")
-    element.click()
-    print("Type Selected as External")
-    time.sleep(2)
-    driver.find_element_by_xpath(btnLogin_xpath).click()
-    print("Login Button Clicked")
+    
+#     driver.find_element_by_xpath(userName_xpath).send_keys("infosys_user")
+#     time.sleep(1)
+#     print("Username Entered")
+#     driver.find_element_by_xpath(passWord_xpath).send_keys("Automation03")
+#     print("Password Entered")
+#     time.sleep(1)
+#     driver.find_element_by_xpath(arrowGroupID_xpath).click()
+#     time.sleep(1)
+#     element = driver.find_element_by_xpath("//*[contains(text(),'External')]")
+#     element.click()
+#     print("Type Selected as External")
+#     time.sleep(2)
+#     driver.find_element_by_xpath(btnLogin_xpath).click()
+#     print("Login Button Clicked")
 
     time.sleep(5)
     driver.close()
 
-    print(" Google Page CLOSED successfully.")
-    logger.info(" Google Page CLOSED successfully. ")
+    print(" Page CLOSED successfully.")
+    logger.info(" Page CLOSED successfully. ")
 
     # if header_text == "Home":
     # if "Home" in header_text:

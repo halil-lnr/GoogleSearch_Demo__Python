@@ -42,5 +42,11 @@ jobs:
         name: test-reports
         path: Logs/*.*
 
-    - name: Archive Test Results
-      run: ls -a
+    - name: List current directory
+      run: |
+        ls -a
+        cd Logs
+        ls
+        cat automation.log
+      
+      

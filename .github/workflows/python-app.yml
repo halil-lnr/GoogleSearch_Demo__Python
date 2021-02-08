@@ -46,8 +46,10 @@ jobs:
       run: |
         ls -a
         cd Logs
+        echo
         echo "Files in \"Logs\" folder"
         ls
+        echo
         echo "Content of \"automation.log\" file "
         cat automation.log
       

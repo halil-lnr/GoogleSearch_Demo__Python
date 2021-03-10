@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class OpenGoogle:
-    base_url = "http://alawdokcweb205:8023/"
+    base_url = "http://alawdokcweb203:8880/VendorManagementUI/#/"
 #     base_url = "http://www.google.com"
 
     logger = LogGen.loggen()

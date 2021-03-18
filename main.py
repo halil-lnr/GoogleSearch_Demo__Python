@@ -17,10 +17,10 @@ class OpenGoogle:
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--ignore-certificate-errors")
     
-    chromedriver = "/usr/bin/chromedriver/chromedriver"
-    driver = webdriver.Chrome(chromedriver)
+#     chromedriver = "/usr/bin/chromedriver/chromedriver"
+#     driver = webdriver.Chrome(chromedriver)
     
-#     driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
     driver.implicitly_wait(20)
 

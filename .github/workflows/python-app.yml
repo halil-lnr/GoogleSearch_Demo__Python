@@ -6,9 +6,8 @@ on:
     branches: [ master ]
 
 jobs:
-  test:
-    runs-on: self-hosted     
-#     runs-on: ubuntu-latest    
+  test: 
+    runs-on: ubuntu-latest    
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -42,16 +41,3 @@ jobs:
       with:
         name: test-reports
         path: Logs/*.*
-
-    - name: List current directory
-      run: |
-        ls -a
-        cd Logs
-        echo
-        echo "Files in \"Logs\" folder"
-        ls
-        echo
-        echo "Content of \"automation.log\" file "
-        cat automation.log
-      
-      

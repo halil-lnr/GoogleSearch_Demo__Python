@@ -42,12 +42,3 @@ jobs:
       with:
         name: test-reports
         path: Logs/*.*
-
-    - name: List current directory
-      run: |
-        ls -a
-        cd Logs
-        echo "Files in \"Logs\" folder"
-        ls
-        echo "Content of \"automation.log\" file "
-        cat automation.log

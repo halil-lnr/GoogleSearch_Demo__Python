@@ -3,7 +3,7 @@ from selenium import webdriver
 from customLogger import LogGen
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-imprt os
+improt os
 
 
 class OpenGoogle:

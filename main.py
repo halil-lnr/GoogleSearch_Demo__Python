@@ -3,6 +3,7 @@ from selenium import webdriver
 from customLogger import LogGen
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+imprt os
 
 
 class OpenGoogle:
@@ -21,6 +22,8 @@ class OpenGoogle:
 #     driver = webdriver.Chrome(chromedriver)
     
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    
+    os.environ['WDM_LOG_LEVEL'] = '0'
 
     driver.implicitly_wait(20)
 

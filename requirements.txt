@@ -3,3 +3,5 @@ pip
 selenium
 setuptools
 webdriver-manager
+nosetests
+pylint

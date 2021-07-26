@@ -3,3 +3,4 @@ pip
 selenium
 setuptools
 webdriver-manager
+coverage

@@ -3,16 +3,9 @@
 # url = "https://google.com/"
 # driver = webdriver.Chrome()
 
-import os
-
-import pytest
-import time
-import json
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.webdriver import WebDriver
 
 webdriver_service = Service("chromedriver")

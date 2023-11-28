@@ -1,28 +1,21 @@
 import time
 from selenium import webdriver
 from customLogger import LogGen
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 import os
 
 
 class OpenGoogle:
-#     base_url = "http://alawdokcweb203:8880/VendorManagementUI/#/"
     base_url = "http://www.google.com"
 
     logger = LogGen.loggen()
+    service = Service()
+    options = webdriver.ChromeOptions()
+    options.headless = False
+    options.accept_insecure_certs = True
 
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--ignore-certificate-errors")
-    
-#     chromedriver = "/usr/bin/chromedriver/chromedriver"
-#     driver = webdriver.Chrome(chromedriver)
-    
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
-    
+    driver = webdriver.Chrome(service=service, options=options)
+  
     os.environ['WDM_LOG_LEVEL'] = '0'
 
     driver.implicitly_wait(20)
@@ -32,7 +25,7 @@ class OpenGoogle:
     driver.get(base_url)
     print(" Google Page Loading... ")
     logger.info("Login Page Loading............")
-    # driver.maximize_window()
+    driver.maximize_window()
 
     page_title = driver.title
     print("Page title is : " + page_title)

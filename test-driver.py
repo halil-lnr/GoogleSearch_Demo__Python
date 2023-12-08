@@ -8,6 +8,19 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.webdriver import WebDriver
 
+import platform
+if platform.system() == "Linux":
+# GitHub actions
+    print(platform.system())
+    # self.driver = webdriver.Chrome(service=webdriver_service, options=options)   
+
+elif platform.system() == "Windows":
+# Jenkins and local run
+    print(platform.system())
+    # self.driver = webdriver.Chrome(executable_path=chrome_driver,options=options)            
+else:
+    print("Wrong Operating System")
+
 options = Options()
 options.headless = True
 options.accept_insecure_certs = True

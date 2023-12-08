@@ -12,10 +12,10 @@ options = Options()
 options.headless = True
 options.accept_insecure_certs = True
 
-cwd = str(os.getcwd())
-chrome_driver = cwd + r'/chromedriver.exe'
+# cwd = str(os.getcwd())
+# chrome_driver = cwd + r'/chromedriver.exe'
 
-driver = webdriver.Chrome(executable_path=chrome_driver,options=options)
+driver = webdriver.Chrome(executable_path='/chromedriver.exe',options=options)
 url = "https://google.com/"
 
 driver.get(url)

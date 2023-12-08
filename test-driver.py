@@ -15,9 +15,6 @@ options = Options()
 options.headless = True
 options.accept_insecure_certs = True
 
-cwd = str(os.getcwd())
-chrome_driver = cwd + r'/chromedriver.exe'
-
 # GitHub actions
 if platform.system() == "Linux":
     print(platform.system())
@@ -27,7 +24,7 @@ if platform.system() == "Linux":
 elif platform.system() == "Windows":
     print(platform.system())
     cwd = str(os.getcwd())
-    chrome_driver = cwd + r'/chromedriver/chromedriver.exe'
+    chrome_driver = cwd + r'/chromedriver.exe'
     driver = webdriver.Chrome(executable_path=chrome_driver,options=options)            
 else:
     print("Wrong Operating System")

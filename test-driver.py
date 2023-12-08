@@ -9,17 +9,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.webdriver import WebDriver
 
 import platform
-if platform.system() == "Linux":
-# GitHub actions
-    print(platform.system())
-    # self.driver = webdriver.Chrome(service=webdriver_service, options=options)   
 
-elif platform.system() == "Windows":
-# Jenkins and local run
-    print(platform.system())
-    # self.driver = webdriver.Chrome(executable_path=chrome_driver,options=options)            
-else:
-    print("Wrong Operating System")
 
 options = Options()
 options.headless = True
@@ -27,8 +17,20 @@ options.accept_insecure_certs = True
 
 cwd = str(os.getcwd())
 chrome_driver = cwd + r'/chromedriver.exe'
+if platform.system() == "Linux":
+# GitHub actions
+    print(platform.system())
+    self.driver = webdriver.Chrome(service=webdriver_service, options=options)   
 
-driver = webdriver.Chrome(service=webdriver_service, options=options) 
+elif platform.system() == "Windows":
+# Jenkins and local run
+    print(platform.system())
+    cwd = str(os.getcwd())
+    chrome_driver = cwd + r'/chromedriver/chromedriver.exe'
+    self.driver = webdriver.Chrome(executable_path=chrome_driver,options=options)            
+else:
+    print("Wrong Operating System")
+# driver = webdriver.Chrome(service=webdriver_service, options=options) 
 # driver = webdriver.Chrome(executable_path='/chromedriver.exe',options=options)
 url = "https://google.com/"
 

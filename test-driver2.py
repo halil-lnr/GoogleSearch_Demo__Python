@@ -2,18 +2,20 @@
 
 # url = "https://google.com/"
 # driver = webdriver.Chrome()
-
+import os
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.webdriver import WebDriver
 
-webdriver_service = Service("chromedriver")
 options = Options()
-options.headless = False
+options.headless = True
 options.accept_insecure_certs = True
 
-driver = webdriver.Chrome(service=webdriver_service, options=options)
+cwd = str(os.getcwd())
+chrome_driver = cwd + r'/chromedriver.exe'
+
+driver = webdriver.Chrome(executable_path=chrome_driver,options=options)
 
 driver.get(url)
 print(" Google Page Loading... ")

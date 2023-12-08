@@ -24,7 +24,7 @@ if platform.system() == "Linux":
 elif platform.system() == "Windows":
     print(platform.system())
     cwd = str(os.getcwd())
-    chrome_driver = cwd + r'/chromedriver.exe'
+    chrome_driver = cwd + r'/chromedriver/chromedriver.exe'
     driver = webdriver.Chrome(executable_path=chrome_driver,options=options)            
 else:
     print("Wrong Operating System")

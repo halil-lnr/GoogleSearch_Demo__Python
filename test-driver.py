@@ -10,26 +10,28 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 
 import platform
 
-
+webdriver_service = Service("chromedriver")
 options = Options()
 options.headless = True
 options.accept_insecure_certs = True
 
 cwd = str(os.getcwd())
 chrome_driver = cwd + r'/chromedriver.exe'
-if platform.system() == "Linux":
-# GitHub actions
-    print(platform.system())
-    self.driver = webdriver.Chrome(service=webdriver_service, options=options)   
 
-elif platform.system() == "Windows":
+# GitHub actions
+if platform.system() == "Linux":
+    print(platform.system())
+    driver = webdriver.Chrome(service=webdriver_service, options=options)   
+
 # Jenkins and local run
+elif platform.system() == "Windows":
     print(platform.system())
     cwd = str(os.getcwd())
     chrome_driver = cwd + r'/chromedriver/chromedriver.exe'
-    self.driver = webdriver.Chrome(executable_path=chrome_driver,options=options)            
+    driver = webdriver.Chrome(executable_path=chrome_driver,options=options)            
 else:
     print("Wrong Operating System")
+    
 # driver = webdriver.Chrome(service=webdriver_service, options=options) 
 # driver = webdriver.Chrome(executable_path='/chromedriver.exe',options=options)
 url = "https://google.com/"

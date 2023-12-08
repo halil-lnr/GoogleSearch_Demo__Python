@@ -36,11 +36,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
         
     - name: Run Automation Tests
-      run: python main.py -v
-#       run: pipenv run python main.py test functional_tests.tests.test_selenium.test_exams -v 2
+      run: python test-driver.py
 
-    - name: Archive Test Results
-      uses: actions/upload-artifact@v2
-      with:
-        name: test-reports
-        path: Logs/*.*
